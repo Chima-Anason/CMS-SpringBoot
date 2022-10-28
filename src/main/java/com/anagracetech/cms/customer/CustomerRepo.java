@@ -1,2 +1,8 @@
-package com.anagracetech.cms.customer;public interface CustomerRepo {
+package com.anagracetech.cms.customer;
+
+import java.util.List;
+
+public interface CustomerRepo {
+
+    List<Customer> getCustomer();
 }
