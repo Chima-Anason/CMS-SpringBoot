@@ -7,6 +7,7 @@ public class Customer {
 
     private Long id;
     private String name;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     public Customer(Long id, String name, String password) {
