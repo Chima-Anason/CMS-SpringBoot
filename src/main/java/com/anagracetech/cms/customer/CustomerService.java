@@ -1,5 +1,6 @@
 package com.anagracetech.cms.customer;
 
+import com.anagracetech.cms.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -23,6 +24,6 @@ public class CustomerService {
                 .stream()
                 .filter(customer -> customer.getId().equals(id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("customer not found"));
+                .orElseThrow(() -> new NotFoundException("customer not found"));
     }
 }

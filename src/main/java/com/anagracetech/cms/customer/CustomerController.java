@@ -1,5 +1,6 @@
 package com.anagracetech.cms.customer;
 
+import com.anagracetech.cms.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,11 @@ public class CustomerController {
     @GetMapping(path ="{customer_Id}")
     Customer getCustomer(@PathVariable("customer_Id") Long id){
         return customerService.getCustomer(id);
+    }
+
+    @GetMapping(path ="{customer_Id}/exception")
+    Customer getCustomerException(@PathVariable("customer_Id") Long id){
+        throw new ApiRequestException("ApiRequestException for customer " + id);
     }
 
     @PostMapping
